@@ -1,0 +1,4 @@
+baseurl:    /
+pygments:   true
+permalink:  /blog/:year/:month/:day/:title
+lsi:        true
