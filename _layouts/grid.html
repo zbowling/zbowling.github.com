@@ -1,8 +1,7 @@
 ---
 layout: default
 ---
-
- <div class="page-header">
+<div class="page-header">
      <header>
          <h1>{{page.title}}<small>{{page.slug}}</small></h1>
      </header>
@@ -10,17 +9,12 @@ layout: default
  <div class="row">
      <div class="span10">
          <div class="main" role="main">
-             {% include breadcrumb.html %}
-             <div class="post">
-                 {{ content }}
-             </div>
+             {{ content }}
          </div>
      </div>
      <div class="span4">
          <span class="date">Posted on {{ page.date | date: "%B %d,  %Y" }}.</span>
      </div>
  </div>
- {% include disqus.html %}
-
-
+ 
 

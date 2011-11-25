@@ -29,6 +29,8 @@ I think you summed up everything into one statement:
 
 > Not all forks are equal or necessarily more important than any other and that including the "root" repo.
 
+<br class="jump"/>
+
 Not every fork is equal
 -----------------------
 
@@ -63,7 +65,7 @@ Contrast that with the design bitbucket uses for their membership page which giv
 
 ![Bitbucket Page](/images/posts/2011-11-24/bitbucket_design.png)
 
-Rather than have a root, repos should just have piers. 
+Rather than have a "root repo", your repo should just have piers. 
 
 The current way Github handles this fails for several reasons.
 
@@ -78,12 +80,13 @@ I wish they would turn this off and treat forks in a uniform way. We can use our
 
 My co=worker Michael at SeatMe has a project that has over 330 forks on a project he hasn't maintained since 2009. There are several forks but one has taken over the main development. Unfortunately everyone still follows, forks, and pushes pull requests to him. This is not an optimal design. 
 
+### No real work around
 
 One work around is to upload the project as brand new repo, but you get a nice warning message.
 
 ![Don't clone](/images/posts/2011-11-24/create_repo_fork.png)
 
-Doing this breaks the other features of the site like being see a list of other forks and prevents being able to send pull requests. If you already had the fork up, you loose the people watching the project.
+Doing this breaks the other features of the site like being see a list of other forks and it prevents being able to send pull requests to other repos that you share code with. If you already had the fork up and you want to push a new repo still, you will also loose all the people watching the project as well.
 
 I asked Github what to do in this situation in support request and got this response.
 
@@ -96,6 +99,8 @@ I asked Github what to do in this situation in support request and got this resp
 >
 > 2. Ask the parent repo to ask us to make yours the new network root
 
+Neither of these viable. 
+
 
 We need a better fork list for each project
 -------------------------------------------
@@ -103,8 +108,7 @@ We need a better fork list for each project
 We need place to list out forks and show them off with everyone else that has a fork. Let us post about that fork and give a summary of the changes in that fork. This should be opt-in (or least give prominence to those that want it) and this should be the first thing you see on the "Network" tab on each repo instead. Branches in each repo also need to be treated as separate forks for this list.
 
 
-Pull requests need more options 
--------------------------------
+### Pull requests need more options 
 
 Some projects don't want pull requests and it would be nice to opt-out. The project could be an unmaintained fork or maybe a mirror. Linus mentioned this when he was asked about his thoughts on Github.  
 

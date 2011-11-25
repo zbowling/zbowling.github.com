@@ -1,0 +1,28 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <id>http://zacbowling.com/</id>
+  <title>Zac Bowling's code</title>
+  <link href="http://zacbowling.com/atom.xml" rel="self"/>
+  <link href="http://zacbowling.com/"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <author>
+    <name>Zac Bowling</name>
+    <email>zac@zacbowling.com</email>
+  </author>
+
+  {% for post in site.posts %}
+  <entry>
+    <id>http://zacbowling.com{{ post.id }}</id>
+    <title>{{ post.title }}</title>
+    <link href="http://zacbowling.com{{ post.url }}"/>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <content type="html">{{ post.content | xml_escape }}</content>
+    <summary/>
+  </entry>
+  {% endfor %}
+
+</feed>
