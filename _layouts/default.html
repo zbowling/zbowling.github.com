@@ -9,7 +9,7 @@
     {% if page.description %}
     <meta name="description" content="{{page.description}}">
     {% elsif content %}
-    <meta name="description" content="{{content | strip_html | strip_newlines | replace:/[Fat]/,'' | truncate:200}}">
+    <meta name="description" content="{{content | strip_html | strip_newlines | replace:'  ',' ' | truncate:200}}">
     {% else %}
     <meta name="description" content="Zac Bowling's code blog.">
     {% endif %}
