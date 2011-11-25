@@ -6,7 +6,7 @@ layout: nil
 
   <id>http://zacbowling.com/</id>
   <title>Zac Bowling's code</title>
-  <link href="http://zacbowling.com/atom.xml" rel="self"/>
+  <link type="application/atom+xml" href="http://zacbowling.com/atom.xml" rel="self"/>
   <link href="http://zacbowling.com/"/>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
   <author>
@@ -18,8 +18,12 @@ layout: nil
   <entry>
     <id>http://zacbowling.com{{ post.id }}</id>
     <title>{{ post.title }}</title>
-    <link href="http://zacbowling.com{{ post.url }}"/>
+    <link type="text/html" rel="alternate" href="http://zacbowling.com{{ post.url }}"/>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <author>
+        <name>Zac Bowling</name>
+        <email>zac@zacbowling.com</email>
+      </author>
     <content type="html">{{ post.content | xml_escape }}</content>
     <summary/>
   </entry>
