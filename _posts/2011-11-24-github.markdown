@@ -55,9 +55,17 @@ There are few problems with this.
 
 Github treats projects you uploaded originally differently that projects that forked later. They call this repo the "root" repo. This is horribly broken. It's impossible to say my version isn't more important than the guy I forked from. If you watch [Linus's Google Talk on Git](http://youtu.be/4XpnKHJAok8?t=25m25s), this goes against one of the values he talked about with Git. 
 
+Here is what network membership pages look like right now:
+
+![Network membership](/images/posts/2011-11-24/started_and_forked_from.png)
+
+Contrast that with the design bitbucket uses for their membership page which gives details as why the project was forked and how popular the fork is.
+
+![Bitbucket Page](/images/posts/2011-11-24/bitbucket_design.png)
+
 Rather than have a root, repos should just have piers. 
 
-This fails for several reasons.
+The current way Github handles this fails for several reasons.
 
  1. When I pull changes from a project, there are times I'm not always pulling from one upstream location very often.
  2. My version is fundamentally a new project on it's own. It's common for this happen.
@@ -68,23 +76,32 @@ This fails for several reasons.
 
 I wish they would turn this off and treat forks in a uniform way. We can use our README files to direct people to the main repository and if we want, in our fork, we can give more info about our fork. Replace it with a link to community of other forks maybe. Just turn that off. In the dashboard and other UI don't separate forks and original projects.
 
-My coworker Michael at SeatMe has a project that has over 330 forks on a project he hasn't maintained since 2009. There are several forks but one has taken over the main development. Unfortunately everyone still follows, forks, and pushes pull requests to him. This is not an optimal design. 
+My co=worker Michael at SeatMe has a project that has over 330 forks on a project he hasn't maintained since 2009. There are several forks but one has taken over the main development. Unfortunately everyone still follows, forks, and pushes pull requests to him. This is not an optimal design. 
 
-One work around is to upload the project as brand new repo, but that you get this warning message.
+
+One work around is to upload the project as brand new repo, but you get a nice warning message.
 
 ![Don't clone](/images/posts/2011-11-24/create_repo_fork.png)
 
-Doing this breaks the other features of the site like being see a list of other forks and prevents being able to send pull requests.
+Doing this breaks the other features of the site like being see a list of other forks and prevents being able to send pull requests. If you already had the fork up, you loose the people watching the project.
 
-One idea is whenever a repository is pushed, any new object SHA1 hashes could be inserted into a key value store with back references to the repos they came from. You can easily tell if two repos on Github share a common ancestry then. Internally if Github is storing one object across all Github repos to save space (which I hope they are), they could extend it to get this data.
+I asked Github what to do in this situation in support request and got this response.
+
+>From: xxx (GitHub Staff)
+>Subject: [Contact] "Forked from" line on pages
+>
+> There are two options:
+>
+> 1. Unfork you fork by deleting it, creating a fresh independent repo and pushing your local copy again to it
+>
+> 2. Ask the parent repo to ask us to make yours the new network root
 
 
-We need a fork directory for each project
------------------------------------------
+We need a better fork list for each project
+-------------------------------------------
 
-We need place to list out forks and show them off with everyone else that has a fork. Let us post about that fork and give a summary of the changes in that fork. This should be opt-in and this should be the first thing you see on the "Network" tab on each repo instead. 
+We need place to list out forks and show them off with everyone else that has a fork. Let us post about that fork and give a summary of the changes in that fork. This should be opt-in (or least give prominence to those that want it) and this should be the first thing you see on the "Network" tab on each repo instead. Branches in each repo also need to be treated as separate forks for this list.
 
-We also have to treat branches in each repo as a separate fork (especially true because GitHub doesn't allow you to have two forks under a single user). In fact this entire interface could be an improved interface on branches that we want users to notice.  
 
 Pull requests need more options 
 -------------------------------
@@ -95,3 +112,10 @@ Some projects have a policy on how to send changes upstream and require copyrigh
 
 A project should be able to require that pull requests assign copyright or they require the person sending the pull request does so  under a specific or compatible license. 
 
+
+Conclusion
+----------
+
+If github can change this model it would dramatically improve the experience around forking. 
+
+Even given all these issues, I still love github. 
