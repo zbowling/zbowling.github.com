@@ -25,7 +25,7 @@
         <div class="container">
             <a class="brand" href="#">ZacBowling.com</a>
             <ul class="nav">
-                <liclass="active">
+                <li class="active">
                     <a href="/">Home</a>
                 </li>
                 <li>
@@ -53,33 +53,25 @@
         <h2><a href="/blog/2011/11/24/github">Forks and github madness.</a></h2>
     </div>
     <div class="post-content">
-        <p>I first want to say that Github is amazing. We use it at <a href='http://www.seatme.com/'>SeatMe</a> to work on code both <a href='http://github.com/SeatMe/'>publicly</a> and privately.</p>
+        <p>Github is amazing. We use it at <a href='http://www.seatme.com/'>SeatMe</a> to work on code both <a href='http://github.com/SeatMe/'>publicly</a> and privately. I use it for all my hackathon projects and personal code. It&#8217;s wonderful.</p>
 
-<p>Before Linus Torvalds created git, nearly everyone I knew worked then (with a few exceptions) worked with centralized source control system like CVS, Subversion, perforce, and Visual SourceSafe. Linus didn&#8217;t invent distributed source control but he did get he word out about it. Git and other distributed source control tools like Mercurial, have pretty much take over as the defacto source control methodology in just a few years.</p>
+<p>That is except for one flaw.</p>
 
-<p>Jumping on that boom, github created an amazing place to foster the concept of distributed coding and give it a centralized place to come together. A hub the forks if you will. In the Mercurial (hg) world, Bitbucket did the same thing.</p>
+<h3 id='forking_in_git_without_github'>Forking in git (without github)</h3>
 
-<p>However, forget Github for a moment.</p>
+<p>One the best features of git (and hg) is that it&#8217;s extremely easy to fork, branch, and pull in code from one or more repositories, make changes in your repository to that code, and then send changes around and allow others to pull those changes back in to their own repositories.</p>
 
-<p>One the best features of git (and hg) is that it&#8217;s extremely easy to fork, branch, and pull in code from one or more repositories, make changes in your repository to that code, and either send changes around or allow others to pull those changes back in to their own versions.</p>
-
-<p>Git make this palatable by embracing merging; the one topic that was considered dreadful in past monolithic source control systems. It does this by tracking where and when you pulled or merged other code already uses that data to make it easy as humanly possible for you to merge changes in from other forks.</p>
-
-<p>It makes it extremely easy from that point to fork someone else code and never share my changes back (like if I&#8217;m building something privately) and I can continue to follow changes upstream or take changes from other users to my local version. For git, this is natural.</p>
+<p>Git makes this easy by embracing the merge process and making it easy (the one topic that was considered dreadful in past monolithic source control systems). It makes it extremely easy from that point to fork someone else&#8217;s code and never share my changes back (like if I&#8217;m building something privately) and I can continue to follow changes upstream or take changes from other users to my local version. For git, this is natural.</p>
 
 <p>The downside of this is that you can end up with a lot of good code lurking around that never makes it way back upstream or into the hands of others maybe could use your changes. If I fork and fix a bug that is possibly useful to others, it can be a lot of effort on my part to share my changes with everyone else that may be using that code. It&#8217;s advantageous for me to get my code back upstream so that I don&#8217;t have to support my changes myself in many cases or conflict when the upstream decides to change something that conflicts.</p>
+
+<h3 id='what_github_solves'>What Github solves</h3>
 
 <p>Github does an amazing job of solving this problem to some extent. It gives these forks a centralized hub to find other forks. It gives visibility and actually creates a real community of code.</p>
 
 <p>It&#8217;s what makes love github so much. Their tools give me a unique value that I can&#8217;t get anywhere else to provide on my own. This is why I hate when someone looks at Github as a clone of SourceForge which why great, only provides services that I can provide myself if I wanted too.</p>
 
 <p>There a few problems with their approach and how they implemented this <em>world of forks</em> that need some real improvement.</p>
-
-<p>I think you summed up everything into one statement:</p>
-
-<blockquote>
-<p>Not all forks are equal or necessarily more important than any other and that including the &#8220;root&#8221; repo.</p>
-</blockquote>
 
         <br/>
         <a href="/blog/2011/11/24/github">(continue reading)</a> - Posted on November 24,  2011.
