@@ -6,8 +6,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
+    {% if page.description %}
+    <meta name="description" content="{{page.description}}">
+    {% elsif content %}
+    <meta name="description" content="{{content | strip_html | strip_newlines | replace:/[Fat]/,'' | truncate:200}}">
+    {% else %}
     <meta name="description" content="Zac Bowling's code blog.">
+    {% endif %}
     <meta name="author" content="Zac Bowling">
 
     <meta name="viewport" content="width=device-width,initial-scale=1">

@@ -21,7 +21,7 @@ Github does an amazing job of solving this problem to some extent. It gives thes
 
 It's what makes love github so much. Their tools give me a unique value that I can't get anywhere else to provide on my own. This is why I hate when someone looks at Github as a clone of SourceForge which why great, only provides services that I can provide myself if I wanted too.  
 
-There a few problems with their approach and how they implemented this *world of forks* that need some real improvement. 
+There a few problems with their approach however.
 
 
 <br class="jump"/>
