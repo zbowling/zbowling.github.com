@@ -1,15 +1,171 @@
-<!DOCTYPE html>
-
-<html lang="en">
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Home - ZacBowling.com</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<meta name="description" content="Zac Bowling's code blog.">
 	<meta name="author" content="Zac Bowling">
-	<!-- Date: 2011-10-03 -->
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<title>Home - ZacBowling.com</title>
+
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+	<script src="/js/modernizr.js"></script>
 </head>
 <body>
- <div>
-    Welcome
-</div>
+
+<div id="container" class="container">
+	<header>
+        <h1>Zac Bowling's blogomatic</h1>
+	</header>
+    <div class="main" role="main">
+        
+  <div class="post">
+    <h1>Forks and github madness.</h1>
+    <div class="content">
+      <p>I first want to say that Github is amazing. We use it at <a href='http://www.seatme.com/'>SeatMe</a> to work on code both <a href='http://github.com/SeatMe/'>publicly</a> and privately.</p>
+
+<p>Before Linus Torvalds created git, nearly everyone I knew worked then (with a few exceptions) worked with centralized source control system like CVS, Subversion, perforce, and Visual SourceSafe. Linus didn&#8217;t invent distributed source control but he did get he word out about it. Git and other distributed source control tools like Mercurial, have pretty much take over as the defacto source control methodology in just a few years.</p>
+
+<p>Jumping on that boom, github created an amazing place to foster the concept of distributed coding and give it a centralized place to come together. A hub the forks if you will. In the Mercurial (hg) world, Bitbucket did the same thing.</p>
+
+<p>However, forget Github for a moment.</p>
+
+<p>One the best features of git (and hg) is that it&#8217;s extremely easy to fork, branch, and pull in code from one or more repositories, make changes in your repository to that code, and either send changes around or allow others to pull those changes back in to their own versions.</p>
+
+<p>Git make this palatable by embracing merging; the one topic that was considered dreadful in past monolithic source control systems. It does this by tracking where and when you pulled or merged other code already uses that data to make it easy as humanly possible for you to merge changes in from other forks.</p>
+
+<p>It makes it extremely easy from that point to fork someone else code and never share my changes back (like if I&#8217;m building something privately) and I can continue to follow changes upstream or take changes from other users to my local version. For git, this is natural.</p>
+
+<p>The downside of this is that you can end up with a lot of good code lurking around that never makes it way back upstream or into the hands of others maybe could use your changes. If I fork and fix a bug that is possibly useful to others, it can be a lot of effort on my part to share my changes with everyone else that may be using that code. It&#8217;s advantageous for me to get my code back upstream so that I don&#8217;t have to support my changes myself in many cases or conflict when the upstream decides to change something that conflicts.</p>
+
+<p>Github does an amazing job of solving this problem to some extent. It gives these forks a centralized hub to find other forks. It gives visibility and actually creates a real community of code.</p>
+
+<p>It&#8217;s what makes love github so much. Their tools give me a unique value that I can&#8217;t get anywhere else to provide on my own. This is why I hate when someone looks at Github as a clone of SourceForge which why great, only provides services that I can provide myself if I wanted too.</p>
+
+<p>There a few problems with their approach and how they implemented this <em>world of forks</em> that need some real improvement.</p>
+
+<p>I think you summed up everything into one statement:</p>
+
+<blockquote>
+<p>Not all forks are equal or necessarily more important than any other and that including the &#8220;root&#8221; repo.</p>
+</blockquote>
+
+<h1 id='not_every_fork_is_equal'>Not every fork is equal</h1>
+
+<p>I fork for a lot of different reasons.</p>
+
+<ol>
+<li>I want to add a feature or fix a bug but I want to share the changes upstream or with other people that may find it actually useful.</li>
+
+<li>I fixed a bug for my own environment. These changes probably would break everyone else and so no body should probably use this fork.</li>
+
+<li>I want to lock a version of a project away in a safe place that I know won&#8217;t change or break later and may use it as a point to send changes back up later. (This partially due to some design issues with git submodules.)</li>
+
+<li>I want to experiment. My changes are probably interesting but not prime time, but if it works out it maybe come something fruitful.</li>
+</ol>
+
+<p>On Github, every fork is just listed in the network of forks. There is no clear way to figure why someone forked.</p>
+
+<p>When I come across a fork, I have no idea if the fork is important and if someone should be really looking at it at all to find anything of value. I&#8217;m forced to look at the commits and make a judgement on my own.</p>
+
+<p>Bitbucket solves this partially by allowing you to give your fork a label.</p>
+
+<h1 id='github_gives_to_much_value_the_repo_that_you_forked_from'>Github gives to much value the repo that you forked from</h1>
+
+<p>There are few problems with this.</p>
+
+<p><img alt='Forked from' src='/images/posts/2011-11-24/forked_from.png' /></p>
+
+<p>Github treats projects you uploaded originally differently that projects that forked later. They call this repo the &#8220;root&#8221; repo. This is horribly broken. It&#8217;s impossible to say my version isn&#8217;t more important than the guy I forked from. If you watch <a href='http://youtu.be/4XpnKHJAok8?t=25m25s'>Linus&#8217;s Google Talk on Git</a>, this goes against one of the values he talked about with Git.</p>
+
+<p>Rather than have a root, repos should just have piers.</p>
+
+<p>This fails for several reasons.</p>
+
+<ol>
+<li>
+<p>When I pull changes from a project, there are times I&#8217;m not always pulling from one upstream location very often.</p>
+</li>
+
+<li>
+<p>My version is fundamentally a new project on it&#8217;s own. It&#8217;s common for this happen.</p>
+
+<ul>
+<li>The upstream maintainer has abandoned the project or isn&#8217;t maintaining anymore.</li>
+
+<li>The project is a port to a new platform and it&#8217;s source incompatible.</li>
+
+<li>I made enough changes to the project that I couldn&#8217;t get upstream to take upstream and I&#8217;m</li>
+</ul>
+</li>
+
+<li>
+<p>A few projects that I haven&#8217;t been able to get my changes.</p>
+</li>
+</ol>
+
+<p>I wish they would turn this off and treat forks in a uniform way. We can use our README files to direct people to the main repository and if we want, in our fork, we can give more info about our fork. Replace it with a link to community of other forks maybe. Just turn that off. In the dashboard and other UI don&#8217;t separate forks and original projects.</p>
+
+<p>My coworker Michael at SeatMe has a project that has over 330 forks on a project he hasn&#8217;t maintained since 2009. There are several forks but one has taken over the main development. Unfortunately everyone still follows, forks, and pushes pull requests to him. This is not an optimal design.</p>
+
+<p>One work around is to upload the project as brand new repo, but that you get this warning message.</p>
+
+<p><img alt='Dont clone' src='/images/posts/2011-11-24/create_repo_fork.png' /></p>
+
+<p>Doing this breaks the other features of the site like being see a list of other forks and prevents being able to send pull requests.</p>
+
+<p>One idea is whenever a repository is pushed, any new object SHA1 hashes could be inserted into a key value store with back references to the repos they came from. You can easily tell if two repos on Github share a common ancestry then. Internally if Github is storing one object across all Github repos to save space (which I hope they are), they could extend it to get this data.</p>
+
+<h1 id='we_need_a_fork_directory_for_each_project'>We need a fork directory for each project</h1>
+
+<p>We need place to list out forks and show them off with everyone else that has a fork. Let us post about that fork and give a summary of the changes in that fork. This should be opt-in and this should be the first thing you see on the &#8220;Network&#8221; tab on each repo instead.</p>
+
+<p>We also have to treat branches in each repo as a separate fork (especially true because GitHub doesn&#8217;t allow you to have two forks under a single user). In fact this entire interface could be an improved interface on branches that we want users to notice.</p>
+
+<h1 id='pull_requests_need_more_options'>Pull requests need more options</h1>
+
+<p>Some projects don&#8217;t want pull requests and it would be nice to opt-out. The project could be an unmaintained fork or maybe a mirror. Linus mentioned this when he was asked about his thoughts on Github.</p>
+
+<p>Some projects have a policy on how to send changes upstream and require copyright assignment is given.</p>
+
+<p>A project should be able to require that pull requests assign copyright or they require the person sending the pull request does so under a specific or compatible license.</p>
+      <h4 class="date">Posted on November 24,  2011.</h4>
+    </div>
+  </div>
+  
+
+    </div>
+	<footer>
+
+	</footer>
+</div> <!--! end of #container -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+
+<!-- scripts concatenated and minified via ant build script-->
+<script src="js/plugins.js"></script>
+<script src="js/script.js"></script>
+<!-- end scripts-->
+
+<script>
+	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+	<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+<![endif]-->
+
 </body>
 </html>

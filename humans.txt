@@ -1,0 +1,7 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+  Developer: Zac Bowling
+  Site: http://zacbowling.com/
+  Twitter: @zbowling
+  Location: San Francisco, CA

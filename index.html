@@ -2,6 +2,16 @@
 layout: default
 title: Home
 ---
-<div>
-    Welcome
-</div>
+
+{% for post in paginator.posts %}
+  <div class="post">
+    <h1>{{ post.title }}</h1>
+    <div class="content">
+      {{ post.content }}
+      <h4 class="date">Posted on {{ post.date | date: "%B %d,  %Y" }}.</h4>
+    </div>
+  </div>
+  {% unless forloop.last %}
+    <hr />
+  {% endunless %}
+{% endfor %}

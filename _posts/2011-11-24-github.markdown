@@ -1,0 +1,97 @@
+---
+layout: post
+title: Forks and github madness.
+---
+
+I first want to say that Github is amazing. We use it at [SeatMe](http://www.seatme.com/) to work on code both [publicly](http://github.com/SeatMe/) and privately. 
+
+Before Linus Torvalds created git, nearly everyone I knew worked then (with a few exceptions) worked with centralized source control system like CVS, Subversion, perforce, and Visual SourceSafe. Linus didn't invent distributed source control but he did get he word out about it. Git and other distributed source control tools like Mercurial, have pretty much take over as the defacto source control methodology in just a few years. 
+
+Jumping on that boom, github created an amazing place to foster the concept of distributed coding and give it a centralized place to come together. A hub the forks if you will. In the Mercurial (hg) world, Bitbucket did the same thing. 
+
+However, forget Github for a moment. 
+
+One the best features of git (and hg) is that it's extremely easy to fork, branch, and pull in code from one or more repositories, make changes in your repository to that code, and either send changes around or allow others to pull those changes back in to their own versions. 
+
+Git make this palatable by embracing merging; the one topic that was considered dreadful in past monolithic source control systems. It does this by tracking where and when you pulled or merged other code already uses that data to make it easy as humanly possible for you to merge changes in from other forks. 
+
+It makes it extremely easy from that point to fork someone else code and never share my changes back (like if I'm building something privately) and I can continue to follow changes upstream or take changes from other users to my local version. For git, this is natural.
+
+The downside of this is that you can end up with a lot of good code lurking around that never makes it way back upstream or into the hands of others maybe could use your changes. If I fork and fix a bug that is possibly useful to others, it can be a lot of effort on my part to share my changes with everyone else that may be using that code. It's advantageous for me to get my code back upstream so that I don't have to support my changes myself in many cases or conflict when the upstream decides to change something that conflicts. 
+
+Github does an amazing job of solving this problem to some extent. It gives these forks a centralized hub to find other forks. It gives visibility and actually creates a real community of code. 
+
+It's what makes love github so much. Their tools give me a unique value that I can't get anywhere else to provide on my own. This is why I hate when someone looks at Github as a clone of SourceForge which why great, only provides services that I can provide myself if I wanted too.  
+
+There a few problems with their approach and how they implemented this *world of forks* that need some real improvement. 
+
+I think you summed up everything into one statement:
+
+> Not all forks are equal or necessarily more important than any other and that including the "root" repo.
+
+Not every fork is equal
+=======================
+
+I fork for a lot of different reasons. 
+
+ 1. I want to add a feature or fix a bug but I want to share the changes upstream or with other people that may find it actually useful.
+ 2. I fixed a bug for my own environment. These changes probably would break everyone else and so no body should probably use this fork. 
+ 3. I want to lock a version of a project away in a safe place that I know won't change or break later and may use it as a point to send changes back up later. (This partially due to some design issues with git submodules.)
+ 4. I want to experiment. My changes are probably interesting but not prime time, but if it works out it maybe come something fruitful. 
+
+On Github, every fork is just listed in the network of forks. There is no clear way to figure why someone forked. 
+
+When I come across a fork, I have no idea if the fork is important and if someone should be really looking at it at all to find anything of value. I'm forced to look at the commits and make a judgement on my own. 
+
+Bitbucket solves this partially by allowing you to give your fork a label.
+
+
+Github gives to much value the repo that you forked from
+========================================================
+
+There are few problems with this.
+
+![Forked from](/images/posts/2011-11-24/forked_from.png)
+
+Github treats projects you uploaded originally differently that projects that forked later. They call this repo the "root" repo. This is horribly broken. It's impossible to say my version isn't more important than the guy I forked from. If you watch [Linus's Google Talk on Git](http://youtu.be/4XpnKHJAok8?t=25m25s), this goes against one of the values he talked about with Git. 
+
+Rather than have a root, repos should just have piers. 
+
+This fails for several reasons.
+
+ 1. When I pull changes from a project, there are times I'm not always pulling from one upstream location very often.
+ 2. My version is fundamentally a new project on it's own. It's common for this happen.
+    * The upstream maintainer has abandoned the project or isn't maintaining anymore.
+    * The project is a port to a new platform and it's source incompatible. 
+    * I made enough changes to the project that I couldn't get upstream to take upstream and I'm 
+ 3. A few projects that I haven't been able to get my changes. 
+
+I wish they would turn this off and treat forks in a uniform way. We can use our README files to direct people to the main repository and if we want, in our fork, we can give more info about our fork. Replace it with a link to community of other forks maybe. Just turn that off. In the dashboard and other UI don't separate forks and original projects.
+
+My coworker Michael at SeatMe has a project that has over 330 forks on a project he hasn't maintained since 2009. There are several forks but one has taken over the main development. Unfortunately everyone still follows, forks, and pushes pull requests to him. This is not an optimal design. 
+
+One work around is to upload the project as brand new repo, but that you get this warning message.
+
+![Don't clone](/images/posts/2011-11-24/create_repo_fork.png)
+
+Doing this breaks the other features of the site like being see a list of other forks and prevents being able to send pull requests.
+
+One idea is whenever a repository is pushed, any new object SHA1 hashes could be inserted into a key value store with back references to the repos they came from. You can easily tell if two repos on Github share a common ancestry then. Internally if Github is storing one object across all Github repos to save space (which I hope they are), they could extend it to get this data.
+
+
+We need a fork directory for each project
+=========================================
+
+We need place to list out forks and show them off with everyone else that has a fork. Let us post about that fork and give a summary of the changes in that fork. This should be opt-in and this should be the first thing you see on the "Network" tab on each repo instead. 
+
+We also have to treat branches in each repo as a separate fork (especially true because GitHub doesn't allow you to have two forks under a single user). In fact this entire interface could be an improved interface on branches that we want users to notice.  
+
+Pull requests need more options 
+===============================
+
+Some projects don't want pull requests and it would be nice to opt-out. The project could be an unmaintained fork or maybe a mirror. Linus mentioned this when he was asked about his thoughts on Github.  
+
+Some projects have a policy on how to send changes upstream and require copyright assignment is given.
+
+A project should be able to require that pull requests assign copyright or they require the person sending the pull request does so  under a specific or compatible license. 
+
