@@ -30,7 +30,7 @@ I think you summed up everything into one statement:
 > Not all forks are equal or necessarily more important than any other and that including the "root" repo.
 
 Not every fork is equal
-=======================
+-----------------------
 
 I fork for a lot of different reasons. 
 
@@ -46,8 +46,8 @@ When I come across a fork, I have no idea if the fork is important and if someon
 Bitbucket solves this partially by allowing you to give your fork a label.
 
 
-Github gives to much value the repo that you forked from
-========================================================
+Github gives to much value to the repo that you forked from
+-----------------------------------------------------------
 
 There are few problems with this.
 
@@ -80,14 +80,14 @@ One idea is whenever a repository is pushed, any new object SHA1 hashes could be
 
 
 We need a fork directory for each project
-=========================================
+-----------------------------------------
 
 We need place to list out forks and show them off with everyone else that has a fork. Let us post about that fork and give a summary of the changes in that fork. This should be opt-in and this should be the first thing you see on the "Network" tab on each repo instead. 
 
 We also have to treat branches in each repo as a separate fork (especially true because GitHub doesn't allow you to have two forks under a single user). In fact this entire interface could be an improved interface on branches that we want users to notice.  
 
 Pull requests need more options 
-===============================
+-------------------------------
 
 Some projects don't want pull requests and it would be nice to opt-out. The project could be an unmaintained fork or maybe a mirror. Linus mentioned this when he was asked about his thoughts on Github.  
 
