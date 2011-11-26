@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Forks and GitHub madness.
-description: Github is amazing but forking there has one big flaw.
+title: GitHub forking has one big flaw
+description: GitHub is amazing. Creates a real code community. But forking has one big flaw.
 ---
 
 Github is amazing. We use it at [SeatMe](http://www.seatme.com/) to work on code both [publicly](http://github.com/SeatMe/) and privately. I use it for all my hackathon projects and personal code. 
