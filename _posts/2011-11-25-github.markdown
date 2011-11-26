@@ -53,7 +53,7 @@ When I come across a fork, I have no idea if the fork is important and if someon
 Bitbucket solves this partially by allowing you to give your fork a label. 
 
 
-### Github gives to much value to the repo that you forked from
+### Github gives too much value to the repo that you forked from
 
 <img class="inline-img" src="/images/posts/2011-11-24/forked_from.png">
 
