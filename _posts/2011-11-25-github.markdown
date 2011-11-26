@@ -16,7 +16,7 @@ Before git and mercurial, merging was a nightmare in most monolithic source cont
 
 Even though git makes it easy to fork code and share changes, you can end up with a lot of good code lurking around that never makes its way back upstream or into the hands of others who could use your changes. If I fork and fix a bug that is useful to others, it can be a lot of effort on my part to share my changes. It's advantageous for me to get my code back upstream so that I don't have continue to support the changes I made, nor do I have to have to worry about potential conflicts when an upstream codebase I follow makes changes later. 
 
-While git makes it easier to share, it's still a lot of work to actually get the word about your changes. Depending on the project, the options you have vary. You might have post a bug report with a patch, send an email out to the other developers, post your own fork up somewhere, etc. It's all a little hit or miss if anyone will see it and it's often more trouble than it's worth. 
+While git makes it easier to share, it's still a lot of work to actually get the word about your changes. Depending on the project, the options you have vary. You might have post a bug report with a patch, send an email out to the other developers, post your own fork up somewhere, etc. It's all a little hit or miss if anyone will see it and it's often more trouble then it's worth. 
 
 ### GitHub gives forks visibility
 
@@ -79,7 +79,7 @@ The current way Github handles this fails for several reasons.
  2. My version my be a fundamental new project on it's own. (like a port for a specific platform)
  3. Upstream is no longer being maintained and I've moved the project on. 
  
-Rather than have a "root repo", every repo should just have piers. I wish they would turn this off and treat forks in a uniform way (more on that later). 
+Rather then have a "root repo", every repo should just have piers. I wish they would turn this off and treat forks in a uniform way (more on that later). 
 
 ### This design is broken. 
 
