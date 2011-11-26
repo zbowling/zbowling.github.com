@@ -17,13 +17,13 @@
 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
-    <script src="/js/modernizr.js"></script>
+
     <link rel="alternate" type="application/rss+xml" title="Zac Bowling's RSS Feed" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Zac Bowling's ATOM Feed" href="/atom.xml" />
 </head>
 <body>
 
-<div class="topbar">
+<div class="topbar" data-scrollspy="scrollspy" data-dropdown="dropdown">
     <div class="fill">
         <div class="container">
             <a class="brand" href="#">ZacBowling.com</a>
@@ -31,11 +31,20 @@
                 <li class="active">
                     <a href="/">Home</a>
                 </li>
-                <li>
-                    <a href="/about.html">About</a>
+            </ul>
+            
+            <ul class="nav secondary-nav">
+                <li class="menu">
+                    <a href="#" class="dropdown-toggle">Projects</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="http://zbowling.github.com/NXTRover/">NXTRover</a></li>
+                        <li><a href="http://cssapply.github.com/CSSApply/">CSSApply</a></li>
+                        <li class="divider"></li>
+                        <li><a href="http://github.com/zbowling/">GitHub</a></li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="/contact.html">Contact</a>
+                  <a href="/about.html">About Me</a>
                 </li>
             </ul>
         </div>
@@ -84,20 +93,19 @@
   </div>
 
     </div>
-
-
     <footer>
         Copyright &copy; 2011 Zac Bowling
     </footer>
-</div> <!--! end of #container -->
+</div> 
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+<script src="/js/modernizr.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/bootstrap-dropdown.js"></script>
+<script src="/js/bootstrap-scrollspy.js"></script>
+<script src="/js/script.js"></script>
 
-<!-- scripts concatenated and minified via ant build script-->
-<script src="js/plugins.js"></script>
-<script src="js/script.js"></script>
-<!-- end scripts-->
 
 <script>
     var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID

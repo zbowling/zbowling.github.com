@@ -5,16 +5,5 @@ layout: default
      <header>
          <h1>{{page.title}}<small>{{page.slug}}</small></h1>
      </header>
- </div>
- <div class="row">
-     <div class="span10">
-         <div class="main" role="main">
-             {{ content }}
-         </div>
-     </div>
-     <div class="span4">
-         <span class="date">Posted on {{ page.date | date: "%B %d,  %Y" }}.</span>
-     </div>
- </div>
- 
-
+</div>
+{{content}}

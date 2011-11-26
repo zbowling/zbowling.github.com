@@ -117,4 +117,17 @@ body {
     
 }
 
+.aboutlabel {
+    float:left;
+    text-align:right;
+    width:130px;
+    font-weight: bold;
+}
+
+.abouttext {
+    margin-left:150px;
+    width:500px;
+    padding-bottom: 10px;
+}
+
 
