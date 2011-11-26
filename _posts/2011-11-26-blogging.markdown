@@ -1,0 +1,11 @@
+---
+layout: post
+title: Blogging again
+description: I haven't "really" blogged in 3 years.
+---
+
+I've started blogging again. First thing I need to get off my chest is GitHub and the problems with it's approach to forking. 
+
+[http://zbowling.github.com/blog/2011/11/25/github/](/blog/2011/11/25/github/)
+
+Turned out to be a lot longer of a post than I intended. First, I had to build the blog engine first (using a fork of Jekyll) and then build at the page templates. I ended up using a combination of HTML5 boilerplate and Twitter Bootstrap. It turned out pretty nice in the end. 
