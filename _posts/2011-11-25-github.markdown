@@ -128,6 +128,12 @@ Through out the site (like the dashboard for example) GitHub should not make a d
 I was able to test this with my hackathon project, CSSApply, where we started in one repo under a user and instead of moving it we created a fork of it in the organization before we realized we couldn't undo it without loosing all the watchers or followers. People still follow the root project following that root link on the fork even though the latest code is in the CSSApply organization.
 
 
+### Replace the "source" and "parent" link in the repo API
+
+When you [hit the GitHub api](https://api.github.com/repos/zbowling/AFNetworking), you get a source and parent node for the repo. 
+
+Replace this with repo network api to list find associated forks. Change the graph to be a bunch of loose association instead of a hierarchy. 
+
 ### We need need better visibility into the forks.
 
 We need place to list out forks and show them off with everyone else that has a fork. Github us post details about our fork and give a summary of the changes we are making (this could be in the description possibly). 
