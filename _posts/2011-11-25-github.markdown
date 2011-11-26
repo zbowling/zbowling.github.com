@@ -89,11 +89,11 @@ At SeatMe, we maintain a fork of [AFNetworking](https://github.com/seatme/AFNetw
 
 Our changes never made it upstream because the upstream maintainer didn't feel it was necessary saying the fix seemed to "complication for something that does not appear to be an issue for a vast majority of people". Since we can't get upstream to take our changes it means that we need to continue to maintain the changes in our fork to fix the bug. 
 
-As we continue to innovate new features on top of those changes to support our app, our fork is growing divergant. While we do [try](https://github.com/AFNetworking/AFNetworking/pull/125) to [send](https://github.com/AFNetworking/AFNetworking/pull/126) as many changes as we can upstream that we know may not conflict, we are the road to having a hard fork. 
+As we continue to innovate new features on top of those changes to support our app, our fork is growing more and more divergent. While we do [try](https://github.com/AFNetworking/AFNetworking/pull/125) to [send](https://github.com/AFNetworking/AFNetworking/pull/126) as many changes as we can upstream that we know may not conflict, we are the road to having a hard fork that others maybe interested in. 
 
 We also have a fork of [Chameleon](https://github.com/seatme/Chameleon) that targets iOS 5 features. Upstream doesn't want to merge in changes right now because it will break their current release schedule but others are continuing to fork them without being able to find the latest and greatest code. Often this leads to the same bugs people are having getting fixed in [several](https://github.com/BigZaphod/Chameleon/commit/ccb39d3745d25631a07c05756be07c1289cfddd4) [different](https://github.com/kdbdallas/Chameleon/commit/3fe7fac14a30846ee8e4a022e7ccecd395565dfd) [forks](https://github.com/ETroll/Chameleon/commit/20a674f5bee64510f2eeb96e9205ad18d86f8d7c).
 
-This is all really suboptimal and can be really solved by changing the network tab.
+This is all really suboptimal.
 
 ### No real work around
 
