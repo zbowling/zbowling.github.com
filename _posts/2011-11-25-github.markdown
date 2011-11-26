@@ -159,6 +159,9 @@ GitHub needs a way to link projects together and they use the fork button as the
 
 However this can be done in a much better way. We have a way to detect common ancestries in git object graphs already (used to merge changes) that could be extended and scaled up to automatically find links across repos. If GitHub is saving space by only storing objects once through out the site (and I hope they are), all they need to do is add back references. Each object is already has SHA1 hash, so in theory, you cloud use a big key-value store to build a simple graph of links between projects. You could build links progressively on each push.
 
+This can't even be more clear than this case where the Doom3GPL was forked, fixed to compile on MacOSX, and then updated again to a new repo. As a [hackernews commenter points out](http://news.ycombinator.com/item?id=3277134) tonight, It's now not possible to see the project as a fork of the other project in the network graph.
+
+
 ### Pull requests need more options 
 
 Some projects don't want pull requests and it would be nice to opt-out. The project could be an unmaintained fork or maybe a mirror. Linus mentioned this when he was asked about his thoughts on Github.  
